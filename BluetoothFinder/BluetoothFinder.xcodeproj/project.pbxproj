@@ -14,7 +14,7 @@
 		E91C6EA228324A7600D71C19 /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91C6EA128324A7600D71C19 /* OnboardingCollectionViewCell.swift */; };
 		E91EC24A2832255100341BCE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91EC2492832255100341BCE /* AppDelegate.swift */; };
 		E91EC24C2832255100341BCE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91EC24B2832255100341BCE /* SceneDelegate.swift */; };
-		E91EC24E2832255100341BCE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91EC24D2832255100341BCE /* ViewController.swift */; };
+		E91EC24E2832255100341BCE /* SubscribeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91EC24D2832255100341BCE /* SubscribeViewController.swift */; };
 		E91EC2512832255100341BCE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E91EC24F2832255100341BCE /* Main.storyboard */; };
 		E91EC2542832255100341BCE /* BluetoothFinder.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E91EC2522832255100341BCE /* BluetoothFinder.xcdatamodeld */; };
 		E91EC2562832255300341BCE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E91EC2552832255300341BCE /* Assets.xcassets */; };
@@ -34,7 +34,7 @@
 		E91EC2462832255100341BCE /* BluetoothFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BluetoothFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E91EC2492832255100341BCE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E91EC24B2832255100341BCE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		E91EC24D2832255100341BCE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E91EC24D2832255100341BCE /* SubscribeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribeViewController.swift; sourceTree = "<group>"; };
 		E91EC2502832255100341BCE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E91EC2532832255100341BCE /* BluetoothFinder.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BluetoothFinder.xcdatamodel; sourceTree = "<group>"; };
 		E91EC2552832255300341BCE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -112,7 +112,7 @@
 				E91EC26128322B5000341BCE /* Resources */,
 				E91EC2492832255100341BCE /* AppDelegate.swift */,
 				E91EC24B2832255100341BCE /* SceneDelegate.swift */,
-				E91EC24D2832255100341BCE /* ViewController.swift */,
+				E91EC24D2832255100341BCE /* SubscribeViewController.swift */,
 				E91EC24F2832255100341BCE /* Main.storyboard */,
 				E91EC2552832255300341BCE /* Assets.xcassets */,
 				E91EC2572832255300341BCE /* LaunchScreen.storyboard */,
@@ -287,7 +287,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E91EC24E2832255100341BCE /* ViewController.swift in Sources */,
+				E91EC24E2832255100341BCE /* SubscribeViewController.swift in Sources */,
 				E91C6E9B28323C5A00D71C19 /* OnboardingViewController.swift in Sources */,
 				E97F92A72832752A00527310 /* UILabel+Extansions.swift in Sources */,
 				E91EC24A2832255100341BCE /* AppDelegate.swift in Sources */,

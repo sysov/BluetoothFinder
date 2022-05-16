@@ -35,10 +35,13 @@ class OnboardingViewController: UIViewController {
         
         if currentPage == slides.count - 1 {
             print("Go to next View")
+            let controller = storyboard?.instantiateViewController(withIdentifier: "SubscribeViewController") as! UIViewController
+            controller.modalPresentationStyle = .fullScreen
+            present(controller, animated: false)
         } else {
         currentPage += 1
         let indexPath = IndexPath(item: currentPage, section: 0)
-        collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+        collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: false)
         print("Click Button")
         }
     }
