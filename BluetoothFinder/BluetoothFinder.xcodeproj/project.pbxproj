@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		712DC377E1EA1E3AC892DAA6 /* Pods_BluetoothFinder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E35308FDC9CA3E76EF2C6B16 /* Pods_BluetoothFinder.framework */; };
+		E91C6E9B28323C5A00D71C19 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91C6E9A28323C5A00D71C19 /* OnboardingViewController.swift */; };
+		E91C6E9E28323FE700D71C19 /* UIView+Extansions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91C6E9D28323FE700D71C19 /* UIView+Extansions.swift */; };
+		E91C6EA02832411900D71C19 /* OnboardingSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91C6E9F2832411900D71C19 /* OnboardingSlide.swift */; };
+		E91C6EA228324A7600D71C19 /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91C6EA128324A7600D71C19 /* OnboardingCollectionViewCell.swift */; };
 		E91EC24A2832255100341BCE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91EC2492832255100341BCE /* AppDelegate.swift */; };
 		E91EC24C2832255100341BCE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91EC24B2832255100341BCE /* SceneDelegate.swift */; };
 		E91EC24E2832255100341BCE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91EC24D2832255100341BCE /* ViewController.swift */; };
@@ -16,12 +20,17 @@
 		E91EC2562832255300341BCE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E91EC2552832255300341BCE /* Assets.xcassets */; };
 		E91EC2592832255300341BCE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E91EC2572832255300341BCE /* LaunchScreen.storyboard */; };
 		E91EC2672832306B00341BCE /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91EC2662832306B00341BCE /* R.generated.swift */; };
+		E97F92A72832752A00527310 /* UILabel+Extansions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97F92A62832752A00527310 /* UILabel+Extansions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3D8659328CD99BA13324ACD1 /* Pods-BluetoothFinder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BluetoothFinder.debug.xcconfig"; path = "Target Support Files/Pods-BluetoothFinder/Pods-BluetoothFinder.debug.xcconfig"; sourceTree = "<group>"; };
 		B0B8DFD7BF44395E000D8BEA /* Pods-BluetoothFinder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BluetoothFinder.release.xcconfig"; path = "Target Support Files/Pods-BluetoothFinder/Pods-BluetoothFinder.release.xcconfig"; sourceTree = "<group>"; };
 		E35308FDC9CA3E76EF2C6B16 /* Pods_BluetoothFinder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BluetoothFinder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E91C6E9A28323C5A00D71C19 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		E91C6E9D28323FE700D71C19 /* UIView+Extansions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extansions.swift"; sourceTree = "<group>"; };
+		E91C6E9F2832411900D71C19 /* OnboardingSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSlide.swift; sourceTree = "<group>"; };
+		E91C6EA128324A7600D71C19 /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
 		E91EC2462832255100341BCE /* BluetoothFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BluetoothFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E91EC2492832255100341BCE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E91EC24B2832255100341BCE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -32,6 +41,10 @@
 		E91EC2582832255300341BCE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E91EC25A2832255300341BCE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E91EC2662832306B00341BCE /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
+		E950557328326DC9006ED294 /* Segoe UI.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Segoe UI.ttf"; sourceTree = "<group>"; };
+		E950557428326E9D006ED294 /* Segoe UI Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Segoe UI Bold.ttf"; sourceTree = "<group>"; };
+		E97F92A52832704400527310 /* Gilroy-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-Regular.ttf"; sourceTree = "<group>"; };
+		E97F92A62832752A00527310 /* UILabel+Extansions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extansions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +65,25 @@
 				E35308FDC9CA3E76EF2C6B16 /* Pods_BluetoothFinder.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E91C6E9928323C0800D71C19 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				E91C6E9A28323C5A00D71C19 /* OnboardingViewController.swift */,
+				E91C6E9F2832411900D71C19 /* OnboardingSlide.swift */,
+				E91C6EA128324A7600D71C19 /* OnboardingCollectionViewCell.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		E91C6E9C28323F6400D71C19 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E91C6E9D28323FE700D71C19 /* UIView+Extansions.swift */,
+				E97F92A62832752A00527310 /* UILabel+Extansions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		E91EC23D2832255000341BCE = {
@@ -75,6 +107,8 @@
 		E91EC2482832255100341BCE /* BluetoothFinder */ = {
 			isa = PBXGroup;
 			children = (
+				E91C6E9C28323F6400D71C19 /* Extensions */,
+				E91C6E9928323C0800D71C19 /* Onboarding */,
 				E91EC26128322B5000341BCE /* Resources */,
 				E91EC2492832255100341BCE /* AppDelegate.swift */,
 				E91EC24B2832255100341BCE /* SceneDelegate.swift */,
@@ -99,6 +133,9 @@
 		E91EC26328322B8500341BCE /* Generated */ = {
 			isa = PBXGroup;
 			children = (
+				E950557428326E9D006ED294 /* Segoe UI Bold.ttf */,
+				E97F92A52832704400527310 /* Gilroy-Regular.ttf */,
+				E950557328326DC9006ED294 /* Segoe UI.ttf */,
 				E91EC2662832306B00341BCE /* R.generated.swift */,
 			);
 			path = Generated;
@@ -251,10 +288,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				E91EC24E2832255100341BCE /* ViewController.swift in Sources */,
+				E91C6E9B28323C5A00D71C19 /* OnboardingViewController.swift in Sources */,
+				E97F92A72832752A00527310 /* UILabel+Extansions.swift in Sources */,
 				E91EC24A2832255100341BCE /* AppDelegate.swift in Sources */,
 				E91EC2672832306B00341BCE /* R.generated.swift in Sources */,
+				E91C6EA02832411900D71C19 /* OnboardingSlide.swift in Sources */,
 				E91EC2542832255100341BCE /* BluetoothFinder.xcdatamodeld in Sources */,
 				E91EC24C2832255100341BCE /* SceneDelegate.swift in Sources */,
+				E91C6E9E28323FE700D71C19 /* UIView+Extansions.swift in Sources */,
+				E91C6EA228324A7600D71C19 /* OnboardingCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
