@@ -125,6 +125,9 @@
 		E91EC26128322B5000341BCE /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E950557428326E9D006ED294 /* Segoe UI Bold.ttf */,
+				E97F92A52832704400527310 /* Gilroy-Regular.ttf */,
+				E950557328326DC9006ED294 /* Segoe UI.ttf */,
 				E91EC26328322B8500341BCE /* Generated */,
 			);
 			path = Resources;
@@ -133,9 +136,6 @@
 		E91EC26328322B8500341BCE /* Generated */ = {
 			isa = PBXGroup;
 			children = (
-				E950557428326E9D006ED294 /* Segoe UI Bold.ttf */,
-				E97F92A52832704400527310 /* Gilroy-Regular.ttf */,
-				E950557328326DC9006ED294 /* Segoe UI.ttf */,
 				E91EC2662832306B00341BCE /* R.generated.swift */,
 			);
 			path = Generated;
