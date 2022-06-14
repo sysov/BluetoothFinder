@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  BluetoothFinder
 //
-//  Created by Valera Sysov on 16.05.22.
+//  Created by Valera Sysov on 1.06.22.
 //
 
 import UIKit

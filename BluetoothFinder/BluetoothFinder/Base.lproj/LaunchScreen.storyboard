@@ -17,36 +17,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BluethothFinder version 0.1" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gf4-g9-Hmp">
-                                <rect key="frame" x="20" y="811" width="374" height="71"/>
-                                <fontDescription key="fontDescription" name="Galvji" family="Galvji" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="252" image="Loading" translatesAutoresizingMaskIntoConstraints="NO" id="6hD-VI-fCd">
-                                <rect key="frame" x="0.0" y="44" width="414" height="667"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launchScreenImage" translatesAutoresizingMaskIntoConstraints="NO" id="fP7-Cr-K0t">
+                                <rect key="frame" x="144" y="385" width="126" height="126"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="126" id="B7W-eb-UsJ"/>
+                                    <constraint firstAttribute="width" constant="126" id="Lgs-A0-H8t"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="6hD-VI-fCd" secondAttribute="trailing" id="Nc6-RG-W0Z"/>
-                            <constraint firstItem="6hD-VI-fCd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="gp0-Bf-gdr"/>
-                            <constraint firstItem="Gf4-g9-Hmp" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="20" id="j06-8p-nVe"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Gf4-g9-Hmp" secondAttribute="trailing" constant="20" id="nmO-Qb-H4a"/>
-                            <constraint firstItem="Gf4-g9-Hmp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="tsJ-4s-EGD"/>
-                            <constraint firstItem="Gf4-g9-Hmp" firstAttribute="top" secondItem="6hD-VI-fCd" secondAttribute="bottom" constant="100" id="xRg-pr-xhu"/>
-                            <constraint firstItem="6hD-VI-fCd" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="zm4-N9-auG"/>
+                            <constraint firstItem="fP7-Cr-K0t" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="5xb-oW-weY"/>
+                            <constraint firstItem="fP7-Cr-K0t" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="xzi-7c-21O"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="52.173913043478265" y="375"/>
         </scene>
     </scenes>
     <resources>
-        <image name="Loading" width="375" height="667"/>
+        <image name="launchScreenImage" width="126" height="126"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
