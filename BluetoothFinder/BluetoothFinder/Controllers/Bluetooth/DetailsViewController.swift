@@ -8,15 +8,13 @@
 import UIKit
 import CoreBluetooth
 
-
-final class DetailsViewController: UIViewController {
-    
+ class DetailsViewController: UIViewController {
     
     // MARK: - DetailsViewController variables
     var selectedPeripheral: CBPeripheral?
     var centralManagerTwo: CBCentralManager!
     let image = UIImageView()
-    
+
     lazy var count = 0
     lazy var rssiSum = 0
     lazy var distance: Double = 0.0
@@ -26,7 +24,7 @@ final class DetailsViewController: UIViewController {
     lazy var foundButton = Button(style: .found, "I find it!")
     lazy var locationButton = Button(style: .location, nil)
     lazy var soundButtom = Button(style: .sound, nil)
-    
+     
     private let discriptionLabel: UILabel =  {
         let label = UILabel(frame: CGRect(x: 0, y: 0, width: 240, height: 54))
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -75,6 +73,8 @@ final class DetailsViewController: UIViewController {
         setUpLocationButton()
         setUpSoundButton()
         
+        locationButton.addTarget(self, action: #selector(locationButtonSelector), for: .touchUpInside)
+        
         centralManagerTwo = CBCentralManager(delegate: self, queue: nil)
         if let selectedPeripheral = selectedPeripheral {
             if selectedPeripheral.name != nil {
@@ -120,6 +120,17 @@ final class DetailsViewController: UIViewController {
         image.bottomAnchor.constraint(equalTo: locationButton.topAnchor, constant: 4).isActive = true
     }
     
+}
+
+
+
+extension DetailsViewController {
+    
+    @objc func locationButtonSelector() {
+           let vc = MapViewController()
+//      present(vc, animated: true)
+        navigationController?.present(vc, animated: true)
+      }
 }
 
 // MARK: - DetailsViewController CBCCentralManager

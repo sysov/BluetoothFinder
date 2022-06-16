@@ -47,9 +47,6 @@ final class BluetoothTableViewCell: UITableViewCell {
         addSubview(labelDeviceBLE)
         addSubview(labelStatusBLE)
         
-        iconBLE.backgroundColor = .blue
-        iconDistance.backgroundColor = .blue
-        
         // MARK: - BluetoothTableViewCell setUp constrains
         self.iconBLE?.translatesAutoresizingMaskIntoConstraints  = false
         self.labelDeviceBLE?.translatesAutoresizingMaskIntoConstraints = false
