@@ -125,8 +125,8 @@ import UIKit
 extension DetailsViewController {
     
     @objc func locationButtonSelector() {
-//           let vc = MapViewController()
-//        navigationController?.present(vc, animated: true)
+           let vc = DeviceMapViewController()
+        navigationController?.present(vc, animated: true)
       }
     
     @objc func favTap() {

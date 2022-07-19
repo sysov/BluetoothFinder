@@ -31,11 +31,8 @@ class LocationManager: NSObject {
     self.locationManager.requestWhenInUseAuthorization()
     locationManager.desiredAccuracy = kCLLocationAccuracyBest
     
-    
-//    kCLLocationAccuracyNearestTenMeters
-    
+       
     while CLLocationManager.authorizationStatus() == .notDetermined {
-      
       
     }
     
