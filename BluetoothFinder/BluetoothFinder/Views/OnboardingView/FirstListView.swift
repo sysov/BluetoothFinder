@@ -35,6 +35,7 @@ final class FirstListView: UICollectionViewCell {
         addSubview(headingLabel)
         addSubview(headingLabelMeter)
        
+       
         backImage.contentMode = .scaleAspectFit
         backImage2.contentMode = .center
        

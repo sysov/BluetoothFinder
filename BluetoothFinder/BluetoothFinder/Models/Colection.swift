@@ -12,10 +12,7 @@ final class CollectionView: UICollectionView {
     
     let layout = UICollectionViewFlowLayout()
     
-    func setupLayout() {
-        layout.scrollDirection = .horizontal
-        layout.minimumLineSpacing = 0
-    }
+  
     
     init(delegate: UICollectionViewDelegateFlowLayout, dataSource: UICollectionViewDataSource) {
         super.init(frame: .zero, collectionViewLayout: layout)
@@ -26,11 +23,17 @@ final class CollectionView: UICollectionView {
         
         backgroundColor = R.color.backgroundColorBluetooth()
         
-        isPagingEnabled                = true
-        showsVerticalScrollIndicator   = false
+        isPagingEnabled = true
+        showsVerticalScrollIndicator = false
         showsHorizontalScrollIndicator = false
         
         translatesAutoresizingMaskIntoConstraints = false
+    }
+    
+    func setupLayout() {
+        layout.scrollDirection = .horizontal
+        layout.minimumLineSpacing = 0
+
     }
     
     required init?(coder: NSCoder) {

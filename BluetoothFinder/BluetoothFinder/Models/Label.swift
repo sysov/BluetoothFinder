@@ -15,6 +15,7 @@ final class Label: UILabel {
         case tableBluetoothLabel
         case heading
         case subscribe
+        case subscribeTwo
     }
     
     init(style: Labels, _ text: String?) {
@@ -40,6 +41,10 @@ final class Label: UILabel {
         case .subscribe:
             font = R.font.gilroyRegular(size: 14)
             textAlignment = .center
+        case .subscribeTwo:
+            font = R.font.gilroySemibold(size: 19)
+            textAlignment = .left
+            
         }
         
     }

@@ -21,6 +21,7 @@ final class Button: UIButton {
         case found
         case location
         case sound
+        case favorite
     }
     
     public func setUUID(_ uuid: UUID) {
@@ -40,7 +41,7 @@ final class Button: UIButton {
             titleLabel?.font = R.font.gilroySemibold(size: 17)
             heightAnchor.constraint(equalToConstant: 60).isActive = true
             backgroundColor = R.color.buttonColor()
-            layer.cornerRadius = 12
+            layer.cornerRadius = 7
             layer.masksToBounds = true
         case .link:
             setTitle(text, for: .normal)
@@ -71,6 +72,11 @@ final class Button: UIButton {
             heightAnchor.constraint(equalToConstant: 48).isActive = true
             widthAnchor.constraint(equalToConstant: 48).isActive = true
             
+        case .favorite:
+            setImage(R.image.rate(), for: .normal)
+            setImage(R.image.favPressed(), for: .selected)
+            heightAnchor.constraint(equalToConstant: 20).isActive = true
+            widthAnchor.constraint(equalToConstant: 20).isActive = true
         }
     }
     

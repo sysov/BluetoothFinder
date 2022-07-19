@@ -6,24 +6,19 @@
 //
 
 import UIKit
-import CoreBluetooth
+
 
  class DetailsViewController: UIViewController {
     
     // MARK: - DetailsViewController variables
-    var selectedPeripheral: CBPeripheral?
-    var centralManagerTwo: CBCentralManager!
     let image = UIImageView()
-
-    lazy var count = 0
-    lazy var rssiSum = 0
-    lazy var distance: Double = 0.0
-    let mesuredPower = -69.0
-    let nConstant = 4.0
-    
+     
+     
+     
     lazy var foundButton = Button(style: .found, "I find it!")
     lazy var locationButton = Button(style: .location, nil)
-    lazy var soundButtom = Button(style: .sound, nil)
+    lazy var soundButton = Button(style: .sound, nil)
+     lazy var favButton = Button(style: .favorite, nil)
      
     private let discriptionLabel: UILabel =  {
         let label = UILabel(frame: CGRect(x: 0, y: 0, width: 240, height: 54))
@@ -52,7 +47,10 @@ import CoreBluetooth
         label.textColor = .white
         return label
     }()
-    
+     
+     
+     
+     
     // MARK: - DetailsViewController viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,32 +58,28 @@ import CoreBluetooth
         image.image = UIImage(named: "circle")
         image.contentMode = .scaleAspectFill
         view.backgroundColor = R.color.backgroundColorBluetooth()
-        view.addSubview(discriptionLabel)
-        view.addSubview(image)
-        view.addSubview(labelRSII)
         view.addSubview(foundButton)
         view.addSubview(locationButton)
-        view.addSubview(soundButtom)
+        view.addSubview(soundButton)
+        view.addSubview(discriptionLabel)
+        view.addSubview(labelRSII)
+        view.addSubview(image)
         setUpDiscriptionLabel()
         setUpRSSILabel()
         setUpImage()
         setUpButtomFound()
         setUpLocationButton()
         setUpSoundButton()
+        configureNavigationSetting()
         
         locationButton.addTarget(self, action: #selector(locationButtonSelector), for: .touchUpInside)
+        favButton.addTarget(self, action: #selector(favTap), for: .touchUpInside)
         
-        centralManagerTwo = CBCentralManager(delegate: self, queue: nil)
-        if let selectedPeripheral = selectedPeripheral {
-            if selectedPeripheral.name != nil {
-                discriptionLabel.text = selectedPeripheral.name
-            }
-            else {
-                discriptionLabel.text = "No Name"
-            }
-        }
     }
     
+     
+     
+     
     // MARK: - DetailsViewController setUpViews
     private func setUpButtomFound() {
         foundButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16).isActive = true
@@ -94,12 +88,13 @@ import CoreBluetooth
     }
     
     private  func setUpLocationButton() {
+
         locationButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 36).isActive = true
         locationButton.bottomAnchor.constraint(equalTo: foundButton.topAnchor, constant: -146).isActive = true
     }
     private  func setUpSoundButton() {
-        soundButtom.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -36).isActive = true
-        soundButtom.bottomAnchor.constraint(equalTo: foundButton.topAnchor, constant: -146).isActive = true
+        soundButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -36).isActive = true
+        soundButton.bottomAnchor.constraint(equalTo: foundButton.topAnchor, constant: -146).isActive = true
     }
     
     private  func setUpDiscriptionLabel() {
@@ -119,85 +114,23 @@ import CoreBluetooth
         image.topAnchor.constraint(equalTo: discriptionLabel.bottomAnchor, constant: -36).isActive = true
         image.bottomAnchor.constraint(equalTo: locationButton.topAnchor, constant: 4).isActive = true
     }
+     
+     private func configureNavigationSetting(){
+         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: favButton)
+
+     }
     
 }
-
-
 
 extension DetailsViewController {
     
     @objc func locationButtonSelector() {
-           let vc = MapViewController()
-//      present(vc, animated: true)
-        navigationController?.present(vc, animated: true)
+//           let vc = MapViewController()
+//        navigationController?.present(vc, animated: true)
       }
+    
+    @objc func favTap() {
+        favButton.isSelected = true
+    }
 }
 
-// MARK: - DetailsViewController CBCCentralManager
-extension DetailsViewController: CBCentralManagerDelegate, CBPeripheralDelegate {
-    func centralManagerDidUpdateState(_ central: CBCentralManager) {
-        switch central.state {
-        case .unknown:
-            print("central.state is .unknown")
-        case .resetting:
-            print("central.state is .resetting")
-        case .unsupported:
-            print("central.state is .unsupported")
-        case .unauthorized:
-            print("central.state is .unauthorized")
-        case .poweredOff:
-            print("central.state is .poweredOff")
-        case .poweredOn:
-            print("central.state is .poweredOn")
-            centralManagerTwo.scanForPeripherals(withServices: nil)
-        @unknown default:
-            print("we screwed")
-        }
-    }
-    func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
-        if labelRSII.text! == "" {
-            labelRSII.text = "Searching..."
-        }
-        if peripheral.identifier != selectedPeripheral?.identifier {
-            //            rssiSum += Int(Double(truncating: RSSI))
-            //            count += 1
-            //            if count == 10 {
-            //                rssiTextUpdate(rssi: NSNumber(value: rssiSum/11))
-            //                count = 0
-            //                rssiSum = 0
-            distance = pow(10.0, (((mesuredPower - Double(truncating: RSSI))) / (10 * nConstant)))
-            count += 1
-            if count == 10 {
-                rssiTextUpdate(rssi: NSNumber(value: distance/10))
-                count = 0
-                distance = 0
-            }
-        }
-        restartScan()
-    }
-    func rssiTextUpdate(rssi: NSNumber) {
-        switch Int(truncating: rssi) {
-        case 0 ... 100:
-            labelRSII.text = "\(distance)"
-            //        case 1 ... 3:
-            //            labelRSII.text = "75%"
-            //        case 3 ... 5:
-            //            labelRSII.text = "50%"
-            //        case 5 ...  7:
-            //            labelRSII.text = "25%"
-            //        case 7...10:
-            //            labelRSII.text = "0"
-            
-        default:
-            print("0")
-            //            labelRSII.text = "Searching"
-        }
-    }
-    func restartScan() {
-        centralManagerTwo.stopScan()
-        centralManagerTwo.scanForPeripherals(withServices: nil)
-    }
-    func centralManager(central: CBCentralManager!, didConnectPeripheral
-                        peripheral: CBPeripheral!) {
-    }
-}

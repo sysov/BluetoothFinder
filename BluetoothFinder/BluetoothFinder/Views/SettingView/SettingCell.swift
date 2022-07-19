@@ -22,8 +22,6 @@ class SettingCell: UITableViewCell {
         iconSetting?.contentMode = .center
         labelSetting = label
         accessoryType = .disclosureIndicator
-//
-//        self.label?.textColor = .white
         guard let iconSetting = iconSetting else { return }
         guard let labelSetting = labelSetting else { return }
         

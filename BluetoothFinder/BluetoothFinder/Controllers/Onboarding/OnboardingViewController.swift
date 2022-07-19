@@ -33,15 +33,26 @@ final class OnboardingViewController: UIViewController {
     
     // MARK: OnboardingViewControllerViewDidLoad
     
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+          // Hide the Navigation Bar
+          self.navigationController?.setNavigationBarHidden(true, animated: true)
+        navigationItem.hidesBackButton = false
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+           // Show the Navigation Bar
+           self.navigationController?.setNavigationBarHidden(false, animated: false)
+        navigationItem.hidesBackButton = false
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
     }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-    }
-    
+
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
@@ -81,7 +92,7 @@ extension OnboardingViewController {
         collectionView.register(FirstListView.self, forCellWithReuseIdentifier: FirstListView.identifier)
         collectionView.register(SecondListView.self, forCellWithReuseIdentifier: SecondListView.identifier)
         collectionView.register(ThirdListView.self, forCellWithReuseIdentifier: ThirdListView.identifier)
-        collectionView.register(SubscribeOneView.self, forCellWithReuseIdentifier: SubscribeOneView.identifier)
+        collectionView.register(SubscribeView.self, forCellWithReuseIdentifier: SubscribeView.identifier)
         
         view.addSubview(collectionView)
         view.addSubview(closeButton)
@@ -104,8 +115,8 @@ extension OnboardingViewController {
             collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             
             continueButton.bottomAnchor.constraint(equalTo: stackView.topAnchor, constant: -15),
-            continueButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20),
-            continueButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20),
+            continueButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 16),
+            continueButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16),
             
             stackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
             stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor)
@@ -118,9 +129,10 @@ extension OnboardingViewController {
 extension OnboardingViewController {
     
     @objc func closeOnboarding() {
-        let vc = BluetoothTableViewController()
+        let vc = DeviceScannerViewController()
         vc.modalPresentationStyle = .fullScreen
-        present(vc, animated: true, completion: nil)
+        navigationController?.pushViewController(vc, animated: true)
+        
     }
     
     @objc func nextPage() {
@@ -128,6 +140,7 @@ extension OnboardingViewController {
             collectionView.scrollToItem(at: IndexPath(arrayLiteral: 0, currentIndex.row + 1), at: .centeredHorizontally, animated: true)
         } else if currentIndex.row == 4 {
             closeOnboarding()
+           
         } else {
             closeOnboarding()
         }
@@ -153,9 +166,9 @@ extension OnboardingViewController {
 
 // MARK: OnboardingViewController view datasource
 extension OnboardingViewController: UICollectionViewDataSource {
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        1
-    }
+//    func numberOfSections(in collectionView: UICollectionView) -> Int {
+//        1
+//    }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         4
@@ -171,21 +184,25 @@ extension OnboardingViewController: UICollectionViewDataSource {
             termsOfUseButton.isHidden = true
             privacyPolicyButton.isHidden = true
             restorePurchaseButton.isHidden = true
+            continueButton.isHidden = false
         case 1:
             slide = SecondListView.identifier
             termsOfUseButton.isHidden = true
             privacyPolicyButton.isHidden = true
             restorePurchaseButton.isHidden = true
+            continueButton.isHidden = false
         case 2:
             slide = ThirdListView.identifier
             termsOfUseButton.isHidden = true
             privacyPolicyButton.isHidden = true
             restorePurchaseButton.isHidden = true
+            continueButton.isHidden = false
         case 3:
-            slide = SubscribeOneView.identifier
+            slide = SubscribeView.identifier
             privacyPolicyButton.isHidden = false
             termsOfUseButton.isHidden = false
             restorePurchaseButton.isHidden = false
+            continueButton.isHidden = true
         default:
             slide = FirstListView.identifier
             termsOfUseButton.isHidden = true
@@ -203,8 +220,8 @@ extension OnboardingViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        let itemWidth = collectionView.bounds.width
-        let itemHeight = collectionView.bounds.height
+        let itemWidth = collectionView.frame.width
+        let itemHeight = collectionView.frame.height
         return CGSize(width: itemWidth, height: itemHeight)
     }
     

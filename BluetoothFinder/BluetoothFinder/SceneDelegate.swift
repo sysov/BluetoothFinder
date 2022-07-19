@@ -22,7 +22,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
                let window = UIWindow(windowScene: windowScene)
                let navController = UINavigationController()
-               let viewController = BluetoothTableViewController()
+               let viewController = DeviceScannerViewController()
 
                navController.viewControllers = [viewController]
                window.rootViewController = navController

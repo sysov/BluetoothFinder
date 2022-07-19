@@ -1,35 +1,25 @@
 //
-//  SubscribeOneView.swift
+//  SubscribeTwo.swift
 //  BluetoothFinder
 //
-//  Created by Valera Sysov on 9.06.22.
+//  Created by Valera Sysov on 6.07.22.
 //
 
 import Foundation
 import UIKit
 
-final class SubscribeOneView: UICollectionViewCell {
-    
-    // MARK: - SubscribeOneView variables
+final class SubscribeOne: View {
     
     lazy var headingLabel = Label(style: .heading, "UNLOCK")
     lazy var headingLabelMeter = Label(style: .heading, "ALL ACCESS")
     lazy var underLabel = Label(style: .subscribe, "Start with a 7 day trial, then 7.99$ per week")
-    public static let identifier = "SubscribeOne"
+    public static let identifier = "SubscribeView"
     lazy var backImage = UIImageView(image: R.image.onboardingBackgroundImage())
     lazy var backImage2 = UIImageView(image: R.image.subscribeImage())
     
-    // MARK: - SubscribeOneView init
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    override func setup() {
         setUpSubscribeOneView()
     }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    // MARK: - SubscribeOneView setUp Views
     
     private func setUpSubscribeOneView() {
         addSubview(backImage)
@@ -66,4 +56,3 @@ final class SubscribeOneView: UICollectionViewCell {
         ])
     }
 }
-

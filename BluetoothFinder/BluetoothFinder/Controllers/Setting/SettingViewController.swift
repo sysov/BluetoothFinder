@@ -62,7 +62,7 @@ final class SettingViewController: UIViewController {
     // MARK: - Setting ViewController setup Views
     private func setUpHeaderSettingView() {
         headerSettingView.translatesAutoresizingMaskIntoConstraints = false
-        headerSettingView.topAnchor.constraint(equalTo: view.topAnchor, constant: 90).isActive = true
+        headerSettingView.topAnchor.constraint(equalTo: view.topAnchor, constant: 76).isActive = true
         headerSettingView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 12).isActive = true
         headerSettingView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 16).isActive = true
     }

@@ -30,7 +30,7 @@ final class HeaderSettingView: View {
             NSAttributedString.Key.foregroundColor: R.color.settingTextColor(),
             NSAttributedString.Key.font: R.font.gilroySemibold(size: 32), .paragraphStyle: paragraphStyle
         ]
-        label.attributedText = NSAttributedString(string: "Setting", attributes: attributes as [NSAttributedString.Key : Any])
+        label.attributedText = NSAttributedString(string: "Settings", attributes: attributes as [NSAttributedString.Key : Any])
     }
 }
 
